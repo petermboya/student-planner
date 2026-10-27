@@ -1,0 +1,24 @@
+{
+  "name": "student-planner",
+  "version": "1.0.0",
+  "description": "A simple student assignment & study planner: organise assignments, track deadlines, plan study time, and monitor progress. Vanilla JS frontend + JSON Server backend.",
+  "main": "app.js",
+  "scripts": {
+    "start": "json-server --watch db.json --host 0.0.0.0 --port ${PORT:-3000} --static .",
+    "server": "json-server --watch db.json --port 3000",
+    "test": "jest --coverage"
+  },
+  "keywords": ["student", "assignments", "planner", "json-server", "vanilla-js"],
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": ["utils.js", "api.js"]
+  }
+}
