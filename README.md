@@ -38,7 +38,7 @@ The backend exposes a REST resource at `http://localhost:3000/assignments`:
 ## Live links
 - Repository: [github.com/petermboya/student-planner](https://github.com/petermboya/student-planner)
 - Live demo: [petermboya.github.io/student-planner](https://petermboya.github.io/student-planner/)
-
+-Figma: https://www.figma.com/design/Tqv1s6yESAa17VKvc92yav/Student-Plannerr?node-id=0-1&p=f&t=Km9jbEHlOLL05Vlz-0
 
 ## License
 MIT — see [LICENSE](LICENSE).
