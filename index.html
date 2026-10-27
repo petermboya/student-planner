@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Planner</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <h1>Student <span class="accent">Planner</span></h1>
+        <p class="tagline">Organise assignments, track deadlines, plan study time, and monitor your progress.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Dashboard / progress overview -->
+      <section class="dashboard" aria-label="Overview">
+        <article class="stat-card">
+          <span class="stat-label">Assignments</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Completed</span>
+          <span class="stat-value" id="stat-done">0</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Due soon / overdue</span>
+          <span class="stat-value" id="stat-duesoon">0</span>
+        </article>
+        <article class="stat-card highlight">
+          <span class="stat-label">Average progress</span>
+          <span class="stat-value" id="stat-avg">0%</span>
+        </article>
+      </section>
+
+      <section class="panel study-panel" aria-label="Study time">
+        <h2>Study time plan</h2>
+        <p class="study-total">Total planned: <strong id="study-total">0 hrs</strong></p>
+        <ul class="study-chips" id="study-by-course"></ul>
+      </section>
+
+      <div class="two-col">
+        <!-- Add / edit form -->
+        <section class="panel form-panel">
+          <h2 id="form-title">Add an assignment</h2>
+          <form id="assignment-form" novalidate>
+            <input type="hidden" id="f-id" />
+
+            <label for="f-title">Title</label>
+            <input type="text" id="f-title" placeholder="e.g. Essay: Causes of WWI" />
+
+            <label for="f-course">Course</label>
+            <input type="text" id="f-course" placeholder="e.g. History" list="course-suggestions" />
+            <datalist id="course-suggestions"></datalist>
+
+            <div class="form-row">
+              <div>
+                <label for="f-dueDate">Due date</label>
+                <input type="date" id="f-dueDate" />
+              </div>
+              <div>
+                <label for="f-plannedHours">Planned hours</label>
+                <input type="number" id="f-plannedHours" min="0" step="0.5" placeholder="0" />
+              </div>
+            </div>
+
+            <label for="f-progress">Progress: <span id="f-progress-val">0%</span></label>
+            <input type="range" id="f-progress" min="0" max="100" step="5" value="0" />
+
+            <label for="f-status">Status</label>
+            <select id="f-status">
+              <option value="todo">To do</option>
+              <option value="in-progress">In progress</option>
+              <option value="done">Done</option>
+            </select>
+
+            <div class="form-actions">
+              <button type="submit" id="form-submit" class="btn btn-primary">Add assignment</button>
+              <button type="button" id="form-cancel" class="btn btn-ghost" hidden>Cancel</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- List + filters -->
+        <section class="panel list-panel">
+          <div class="list-head">
+            <h2>Your assignments</h2>
+            <div class="filters">
+              <label class="sr-only" for="filter-course">Filter by course</label>
+              <select id="filter-course"><option value="all">All courses</option></select>
+              <label class="sr-only" for="filter-status">Filter by status</label>
+              <select id="filter-status">
+                <option value="all">All statuses</option>
+                <option value="todo">To do</option>
+                <option value="in-progress">In progress</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="loading" id="loading" hidden>Loading…</p>
+          <p class="empty-state" id="empty-state" hidden>No assignments yet. Add one on the left to get started.</p>
+          <ul class="assignment-list" id="assignment-list"></ul>
+        </section>
+      </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <!-- Load order matters: helpers and API first, then the app that uses them. -->
+    <script src="utils.js"></script>
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
