@@ -5,12 +5,12 @@ A simple, clean web app that helps students **organise assignments, track deadli
 ## Objectives 
 - **Organise assignments** — Allows students to add, edit, and delete assignments; filter by course and status.
 - **Track deadlines** — Students can be able to see the status of their  assignments by colour-coded badges (Overdue / Due soon / Upcoming), sorted by nearest due date.
-- **Plan study time** — Sudents can set planned study hours per assignment and see totals per course.
-- **Monitor progress** — A student can oversee their progress wih the per-assignment progress bars plus a dashboard overview (totals, completed, due soon/overdue, average progress).
+- **Plan study time** — Students can set planned study hours per assignment and see totals per course.
+- **Monitor progress** — A student can oversee their progress with the per-assignment progress bars plus a dashboard overview (totals, completed, due soon/overdue, average progress).
 
 ## Tech stack
 - HTML5 (semantic structure) + CSS3 (responsive, three-colour palette)
-- Vanilla JavaScript (no framework), split into modules
+- Vanilla JavaScript, split into modules
 - JSON Server (mock REST API, data persisted in `db.json`)
 - Jest (unit tests + coverage)
 
