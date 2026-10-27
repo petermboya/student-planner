@@ -1,0 +1,58 @@
+{
+  "assignments": [
+    {
+      "id": 1,
+      "title": "Essay: Causes of WWI",
+      "course": "History",
+      "dueDate": "2026-11-02",
+      "plannedHours": 5,
+      "progress": 60,
+      "status": "in-progress"
+    },
+    {
+      "id": 2,
+      "title": "Calculus Problem Set 4",
+      "course": "Mathematics",
+      "dueDate": "2026-10-29",
+      "plannedHours": 4,
+      "progress": 20,
+      "status": "in-progress"
+    },
+    {
+      "id": 3,
+      "title": "Lab Report: Titration",
+      "course": "Chemistry",
+      "dueDate": "2026-11-10",
+      "plannedHours": 3,
+      "progress": 0,
+      "status": "todo"
+    },
+    {
+      "id": 4,
+      "title": "Reading: Chapters 5-7",
+      "course": "Literature",
+      "dueDate": "2026-10-27",
+      "plannedHours": 2,
+      "progress": 100,
+      "status": "done"
+    },
+    {
+      "id": 5,
+      "title": "Group Project Slides",
+      "course": "Business",
+      "dueDate": "2026-11-15",
+      "plannedHours": 6,
+      "progress": 35,
+      "status": "in-progress"
+    },
+    {
+      "title": "Moringa JavaScript assignment",
+      "course": "Software Engineering",
+      "dueDate": "2026-12-02",
+      "plannedHours": 1,
+      "progress": 100,
+      "status": "done",
+      "id": 6
+    }
+  ]
+}
